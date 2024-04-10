@@ -1,6 +1,6 @@
 {
 	"name": "@sitebender/fp",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Typescript utilities and types with an FP tilt.",
 	"license": "MIT",
 	"author": "Charles F. Munat <coder@craft-code.dev>",
