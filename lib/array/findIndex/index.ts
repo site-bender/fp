@@ -1,13 +1,13 @@
-import { none, some } from "../..//option";
+import { none, some } from "../..//option"
 
 export type FindIndexF = <T>(
-  f: (i: T) => boolean,
-) => (arr: Array<T>) => Option<number>;
+	f: (i: T) => boolean,
+) => (arr: Array<T>) => Option<number>
 
-const findIndex: FindIndexF = (f) => (arr) => {
-  const index = arr.findIndex(f);
+const findIndex: FindIndexF = f => arr => {
+	const index = arr.findIndex(f)
 
-  return index === -1 ? none : some(index);
-};
+	return index === -1 ? none : some(index)
+}
 
-export default findIndex;
+export default findIndex

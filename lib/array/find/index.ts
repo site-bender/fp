@@ -1,6 +1,6 @@
-import { fromNullable } from "../../option";
+import { fromNullable } from "../../option"
 
-export type FindF = <T>(f: (i: T) => boolean) => (arr: Array<T>) => Option<T>;
-const find: FindF = (f) => (arr) => fromNullable(arr.find(f));
+export type FindF = <T>(f: (i: T) => boolean) => (arr: Array<T>) => Option<T>
+const find: FindF = f => arr => fromNullable(arr.find(f))
 
-export default find;
+export default find

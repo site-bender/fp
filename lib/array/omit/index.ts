@@ -1,6 +1,6 @@
-import not from "../../predicates/not";
+import not from "../../predicates/not"
 
-export type OmitF = <T>(f: (i: T) => boolean) => (arr: Array<T>) => Array<T>;
-const omit: OmitF = (f) => (arr) => arr.filter((item) => not(f(item)));
+export type OmitF = <T>(f: (i: T) => boolean) => (arr: Array<T>) => Array<T>
+const omit: OmitF = f => arr => arr.filter(item => not(f(item)))
 
-export default omit;
+export default omit

@@ -1,15 +1,15 @@
-import { isNone } from "../../option";
-import replaceAt from "../replaceAt";
-import findLastIndex from "../findLastIndex";
+import { isNone } from "../../option"
+import replaceAt from "../replaceAt"
+import findLastIndex from "../findLastIndex"
 
 export type ReplaceLastMatchF = (
-  re: RegExp,
-) => (f: (i: string) => string) => (arr: Array<string>) => Array<string>;
+	re: RegExp,
+) => (f: (i: string) => string) => (arr: Array<string>) => Array<string>
 
-const replaceLastMatch: ReplaceLastMatchF = (re) => (f) => (arr) => {
-  const index = findLastIndex<string>((item) => new RegExp(re).test(item))(arr);
+const replaceLastMatch: ReplaceLastMatchF = re => f => arr => {
+	const index = findLastIndex<string>(item => new RegExp(re).test(item))(arr)
 
-  return isNone(index) ? arr : replaceAt<string>(index.value)(f)(arr);
-};
+	return isNone(index) ? arr : replaceAt<string>(index.value)(f)(arr)
+}
 
-export default replaceLastMatch;
+export default replaceLastMatch

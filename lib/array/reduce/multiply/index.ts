@@ -1,12 +1,12 @@
-import { MULTIPLICATION_IDENTITY } from "../../../constants";
-import pipe from "../../../functions/pipe";
-import reduce from "../../reduce";
+import { MULTIPLICATION_IDENTITY } from "../../../constants"
+import pipe from "../../../functions/pipe"
+import reduce from "../../reduce"
 
-type MULTIPLY = (self: Array<number>) => number;
+type MULTIPLY = (self: Array<number>) => number
 
 const multiply: MULTIPLY = pipe(
-  MULTIPLICATION_IDENTITY,
-  reduce((a, b: number) => a * b),
-);
+	MULTIPLICATION_IDENTITY,
+	reduce((a, b: number) => a * b),
+)
 
-export default multiply;
+export default multiply

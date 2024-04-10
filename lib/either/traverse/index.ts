@@ -1,28 +1,28 @@
-import tail from "../../array/tail";
-import { right, isLeft } from "../index";
+import tail from "../../array/tail"
+import { right, isLeft } from "../index"
 
 type Traverse = <E, A, B>(
-  f: (a: A) => Either<E, B>,
-) => (as: Array<A>) => Either<E, Array<B>>;
+	f: (a: A) => Either<E, B>,
+) => (as: Array<A>) => Either<E, Array<B>>
 
-const traverse: Traverse = (f) => (as) => {
-  if (as.length < 1) return right([]);
+const traverse: Traverse = f => as => {
+	if (as.length < 1) return right([])
 
-  const o = f(as[0]);
+	const o = f(as[0])
 
-  if (isLeft(o)) return o;
+	if (isLeft(o)) return o
 
-  const out = [o.right];
+	const out = [o.right]
 
-  for (let a of tail(as)) {
-    const o = f(a);
+	for (let a of tail(as)) {
+		const o = f(a)
 
-    if (isLeft(o)) return o;
+		if (isLeft(o)) return o
 
-    out.push(o.right);
-  }
+		out.push(o.right)
+	}
 
-  return right(out);
-};
+	return right(out)
+}
 
-export default traverse;
+export default traverse
