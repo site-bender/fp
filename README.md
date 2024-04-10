@@ -1,3 +1,3 @@
-# @sitebender/operations
+# @sitebender/fp
 
-Library for generating validators, calculations, formatters, and even HTML elements from JSON.
+FP types and utilities for Typescript.
