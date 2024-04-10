@@ -1,6 +1,6 @@
 {
 	"name": "@sitebender/fp",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Typescript utilities and types with an FP tilt.",
 	"license": "MIT",
 	"author": "Charles F. Munat <coder@craft-code.dev>",
@@ -10,7 +10,6 @@
 		"lib",
 		"src"
 	],
-	"private": true,
 	"scripts": {
 		"build": "tsc && vite build",
 		"bump": "pnpm version patch --force",
