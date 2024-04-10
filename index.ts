@@ -11,5 +11,6 @@ import * as p from "./lib/predicates"
 import * as s from "./lib/string"
 
 // UTILITY functions
+import * as u from "./lib/utilities"
 
-export { a, e, f, o, p, s }
+export { a, e, f, o, p, s, u }
