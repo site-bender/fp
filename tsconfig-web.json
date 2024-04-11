@@ -5,7 +5,7 @@
 		"useDefineForClassFields": true,
 		"module": "ESNext",
 		"lib": ["ESNext", "DOM", "DOM.Iterable"],
-		"outDir": "dist",
+		"outDir": "web",
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
 
@@ -21,11 +21,7 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
-
-		/* Types */
-		"declaration": true,
-		"declarationDir": "./lib"
 	},
-	"include": ["index.ts", "lib"],
+	"include": ["src"],
 	"exclude": ["node_modules"]
 }

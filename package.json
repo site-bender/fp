@@ -1,6 +1,6 @@
 {
 	"name": "@sitebender/fp",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"description": "Typescript utilities and types with an FP tilt.",
 	"license": "MIT",
 	"author": "Charles F. Munat <coder@craft-code.dev>",
@@ -10,10 +10,11 @@
 		"lib",
 		"src"
 	],
-	"types": "lib/global.d.ts",
+	"types": "dist/global.d.ts",
 	"scripts": {
 		"astro": "astro",
-		"build": "tsc && astro build",
+		"build": "tsc && vite build",
+		"build:web": "tsc --project tsconfig-web.json && astro build",
 		"bump": "pnpm version patch --force",
 		"bump:major": "pnpm version major --force",
 		"bump:minor": "pnpm version minor --force",
