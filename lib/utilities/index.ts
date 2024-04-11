@@ -1,4 +1,4 @@
 import generateShortId from "./generateShortId"
-import not from "./not"
+import not from "../predicates/not"
 
 export { generateShortId, not }
