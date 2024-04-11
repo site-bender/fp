@@ -1,4 +1,4 @@
-import { isNone, some } from ".."
+import { Option, isNone, some } from ".."
 
 type MapF = <A, B>(f: (a: A) => B) => (o: Option<A>) => Option<B>
 

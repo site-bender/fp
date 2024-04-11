@@ -1,4 +1,4 @@
-import { fromNullable } from "../..//option"
+import { Option, fromNullable } from "../..//option"
 
 export type LastF = <T>(arr: Array<T>) => Option<T>
 const last: LastF = arr => fromNullable(arr.at(-1))

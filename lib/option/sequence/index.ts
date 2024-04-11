@@ -1,6 +1,7 @@
 import identity from "../../functions/identity"
 import pipe from "../../functions/pipe"
 import traverse from "../traverse"
+import { Option } from ".."
 
 type Sequence = <T>(self: Array<Option<T>>) => Option<Array<T>>
 

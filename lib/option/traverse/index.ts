@@ -1,6 +1,5 @@
 import { tail } from "../../array"
-import isNone from "../isNone"
-import some from "../some"
+import { Option, isNone, some } from ".."
 
 type Traverse = <T, R>(
 	f: (t: T) => Option<R>,

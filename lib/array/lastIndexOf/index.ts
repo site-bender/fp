@@ -1,4 +1,4 @@
-import { fromNullable } from "../../option"
+import { Option, fromNullable } from "../../option"
 
 export type LastIndexOfF = <T>(t: T) => (arr: Array<T>) => Option<number>
 

@@ -1,3 +1,4 @@
+import { Either, Left, Right } from "./types"
 import ap from "./ap"
 import flatMap from "./flatMap"
 import isLeft from "./isLeft"
@@ -11,6 +12,9 @@ import getOrElse from "./getOrElse"
 import allOf from "./allOf"
 
 export {
+	type Either,
+	type Left,
+	type Right,
 	left,
 	right,
 	isLeft,

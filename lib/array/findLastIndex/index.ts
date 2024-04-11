@@ -1,4 +1,4 @@
-import { none, some } from "../..//option"
+import { Option, none, some } from "../..//option"
 
 export type FindLastIndexF = <T>(
 	f: (i: T) => boolean,

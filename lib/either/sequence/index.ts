@@ -1,6 +1,7 @@
 import identity from "../../functions/identity"
 import pipe from "../../functions/pipe"
 import traverse from "../traverse"
+import { Either } from "../types"
 
 type Sequence = <E, A>(self: Array<Either<E, A>>) => Either<E, Array<A>>
 

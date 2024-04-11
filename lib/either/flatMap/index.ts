@@ -1,4 +1,4 @@
-import { isLeft } from ".."
+import { Either, isLeft } from ".."
 
 type FlatMapF = <E, A, U>(
 	f: (a: A) => Either<E, U>,

@@ -1,5 +1,5 @@
 import tail from "../../array/tail"
-import { right, isLeft } from "../index"
+import { right, isLeft, Either } from ".."
 
 type Traverse = <E, A, B>(
 	f: (a: A) => Either<E, B>,
