@@ -1,6 +1,6 @@
 {
 	"name": "@sitebender/fp",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "Typescript utilities and types with an FP tilt.",
 	"license": "MIT",
 	"author": "Charles F. Munat <coder@craft-code.dev>",
@@ -10,7 +10,7 @@
 		"lib",
 		"src"
 	],
-	"types": "global.d.ts",
+	"types": "lib/global.d.ts",
 	"scripts": {
 		"astro": "astro",
 		"build": "tsc && astro build",
