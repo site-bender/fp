@@ -18,7 +18,11 @@
 		"strict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"noFallthroughCasesInSwitch": true
+		"noFallthroughCasesInSwitch": true,
+
+		/* Types */
+		"declaration": true,
+		"declarationDir": "./lib"
 	},
 	"include": ["index.ts", "lib", "src"]
 }
