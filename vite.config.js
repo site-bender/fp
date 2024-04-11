@@ -12,11 +12,7 @@ export default defineConfig({
 		lib: {
 			entry: resolve(__dirname, "index.ts"),
 			formats: ["es"],
-			name: "@sitebender/operations",
+			name: "@sitebender/fp",
 		},
-	},
-	test: {
-		setupFiles: ["vitest-localstorage-mock"],
-		mockReset: false,
 	},
 })
