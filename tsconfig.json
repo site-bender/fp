@@ -4,11 +4,7 @@
 		"target": "ESNext",
 		"useDefineForClassFields": true,
 		"module": "ESNext",
-		"lib": [
-			"ESNext",
-			"DOM",
-			"DOM.Iterable"
-		],
+		"lib": ["ESNext", "DOM", "DOM.Iterable"],
 		"outDir": "dist",
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
@@ -26,11 +22,6 @@
 		"declarationDir": "./dist",
 		"declarationMap": true
 	},
-	"include": [
-		"index.ts",
-		"lib"
-	],
-	"exclude": [
-		"node_modules"
-	]
+	"include": ["index.ts", "lib"],
+	"exclude": ["node_modules"]
 }
