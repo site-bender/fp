@@ -1,4 +1,4 @@
-import { none, some } from "../../option"
+import { Option, Some, none, some } from "../../option"
 
 export type LastIndexOfMatchF = (
 	re: RegExp,

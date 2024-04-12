@@ -1,4 +1,4 @@
-import { isNone } from ".."
+import { Option, isNone } from ".."
 
 type FlatMap = <A, B>(f: (a: A) => Option<B>) => (o: Option<A>) => Option<B>
 

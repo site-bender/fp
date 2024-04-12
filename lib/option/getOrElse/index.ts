@@ -1,4 +1,4 @@
-import isNone from "../isNone"
+import { Option, isNone } from ".."
 
 type GetOrElse = <T>(alt: () => T) => (self: Option<T>) => T
 

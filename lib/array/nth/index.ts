@@ -1,4 +1,4 @@
-import { fromNullable, none } from "../../option"
+import { Option, fromNullable, none } from "../../option"
 
 export type NthF = (i: number) => <T>(arr: Array<T>) => Option<T>
 

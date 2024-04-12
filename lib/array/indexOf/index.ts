@@ -1,4 +1,4 @@
-import { fromNullable } from "../..//option"
+import { Option, fromNullable } from "../../option"
 
 export type IndexOfF = <T>(t: T) => (arr: Array<T>) => Option<number>
 

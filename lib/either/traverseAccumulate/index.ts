@@ -1,4 +1,4 @@
-import { isLeft, left, right } from ".."
+import { Either, isLeft, left, right } from ".."
 import map from "../map"
 import tail from "../../array/tail"
 import { pipe } from "../../functions"

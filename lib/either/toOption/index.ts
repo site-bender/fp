@@ -1,5 +1,6 @@
-import { none, some } from "../../option"
+import { Option, none, some } from "../../option"
 import isLeft from "../isLeft"
+import { Either } from "../types"
 
 type ToOption = <E, A>(either: Either<E, A>) => Option<A>
 

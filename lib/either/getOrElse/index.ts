@@ -1,4 +1,4 @@
-import { isLeft } from ".."
+import { Either, isLeft } from ".."
 
 type GetOrElse = <T>(alt: () => T) => (self: Either<any, T>) => T
 

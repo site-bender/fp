@@ -1,4 +1,4 @@
-import { isLeft } from ".."
+import { Either, isLeft } from ".."
 
 type Match = <E, B>(
 	onLeft: (e: E) => B,

@@ -1,4 +1,4 @@
-import { isNone } from ".."
+import { Option, isNone } from ".."
 
 type Match = <B>(
 	onNone: () => B,
