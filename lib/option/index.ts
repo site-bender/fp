@@ -7,6 +7,7 @@ import match from "./match"
 import none from "./none"
 import some from "./some"
 import getOrElse from "./getOrElse"
+import toEither from "./toEither"
 import traverse from "./traverse"
 import sequence from "./sequence"
 
@@ -22,6 +23,7 @@ export {
 	map,
 	flatMap,
 	getOrElse,
+	toEither,
 	traverse,
 	sequence,
 }
