@@ -1,5 +1,9 @@
-import { Option, isNone } from ".."
-import { Either, right, left } from "../../either"
+import type { Option } from "../types"
+import type { Either } from "../../either/types"
+
+import isNone from "../isNone"
+import left from "../../either/left"
+import right from "../../either/right"
 
 type ToEither = <E>(onLeft: () => E) => <A>(o: Option<A>) => Either<E, A>
 

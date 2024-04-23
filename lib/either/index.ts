@@ -1,4 +1,7 @@
-import { Either, Left, Right } from "./types"
+/* v8 ignore */
+
+import type { Either, Left, Right } from "./types"
+
 import ap from "./ap"
 import flatMap from "./flatMap"
 import isLeft from "./isLeft"

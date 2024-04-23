@@ -1,3 +1,5 @@
+/* v8 ignore */
+
 import all from "./all"
 import compact from "./compact"
 import concat from "./concat"

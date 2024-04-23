@@ -1,5 +1,8 @@
+import type { Either } from "../types"
+
 import tail from "../../array/tail"
-import { right, isLeft, Either } from ".."
+import isLeft from "../isLeft"
+import right from "../right"
 
 type Traverse = <E, A, B>(
 	f: (a: A) => Either<E, B>,

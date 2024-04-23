@@ -1,3 +1,5 @@
+/* v8 ignore */
+
 // ARRAY functions
 import * as a from "./lib/array"
 

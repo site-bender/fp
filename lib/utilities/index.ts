@@ -1,4 +1,5 @@
-import generateShortId from "./generateShortId"
-import not from "../predicates/not"
+/* v8 ignore */
 
-export { generateShortId, not }
+import generateShortId from "./generateShortId"
+
+export { generateShortId }

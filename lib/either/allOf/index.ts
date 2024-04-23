@@ -1,6 +1,7 @@
-import { pipe } from "../../functions"
+import type { Either } from "../types"
+
+import pipe from "../../functions/pipe"
 import traverseAccumulate from "../traverseAccumulate"
-import { Either } from "../types"
 
 type AllOf = <E, A, B>(
 	f: (a: A) => Either<E[], B>,
