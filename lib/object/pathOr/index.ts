@@ -1,9 +1,12 @@
 import type { JSONObject, JSONValue } from "../types"
-import type { Option, Some } from "../../option/types"
+import type { Option } from "../../option/types"
 
+import flatMap from "../../option/flatMap"
 import head from "../../array/head"
 import isNone from "../../option/isNone"
-import map from "../../option/map"
+import none from "../../option/none"
+import pipe from "../../functions/pipe"
+import some from "../../option/some"
 
 type PathOrF = (
 	path: string | Array<string | number>,
@@ -18,12 +21,21 @@ const pathOr: PathOrF = path => or => source => {
 
 	const segments = Array.isArray(path) ? path : path.split(".")
 
-	const segment = head(segments)
-
-	// Should map return None when value is undefined?
-	const out = map(
-		value => (value as JSONObject)[(segment as Some<string | number>).value],
-	)(source)
+	const out = pipe(
+		head(segments),
+		flatMap(segment =>
+			pipe(
+				source,
+				flatMap(value =>
+					typeof value === "object" && value != null
+						? Array.isArray(value)
+							? some(value[segment as number])
+							: some(value[segment as string])
+						: none,
+				),
+			),
+		),
+	)
 
 	if (isNone(out) || out.value == null) {
 		return or
