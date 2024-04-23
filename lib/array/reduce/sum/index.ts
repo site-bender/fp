@@ -2,9 +2,9 @@ import { ADDITION_IDENTITY } from "../../../constants"
 import pipe from "../../../functions/pipe"
 import reduce from "../../reduce"
 
-type SUM = (self: Array<number>) => number
+type SumF = (self: Array<number>) => number
 
-const sum: SUM = pipe(
+const sum: SumF = pipe(
 	ADDITION_IDENTITY,
 	reduce((a, b: number) => a + b),
 )

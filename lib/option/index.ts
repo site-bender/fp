@@ -1,4 +1,5 @@
-import { Option, Some, None } from "./types"
+import type { Option, Some, None } from "./types"
+
 import flatMap from "./flatMap"
 import fromNullable from "./fromNullable"
 import isNone from "./isNone"

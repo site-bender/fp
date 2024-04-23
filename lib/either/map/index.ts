@@ -1,4 +1,7 @@
-import { Either, isLeft, right } from ".."
+import type { Either } from ".."
+
+import isLeft from "../isLeft"
+import right from "../right"
 
 type MapF = <A, B, E>(f: (a: A) => B) => (e: Either<E, A>) => Either<E, B>
 

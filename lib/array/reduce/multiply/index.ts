@@ -1,10 +1,11 @@
 import { MULTIPLICATION_IDENTITY } from "../../../constants"
+
 import pipe from "../../../functions/pipe"
 import reduce from "../../reduce"
 
-type MULTIPLY = (self: Array<number>) => number
+type MultiplyF = (self: Array<number>) => number
 
-const multiply: MULTIPLY = pipe(
+const multiply: MultiplyF = pipe(
 	MULTIPLICATION_IDENTITY,
 	reduce((a, b: number) => a * b),
 )

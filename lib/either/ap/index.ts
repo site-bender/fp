@@ -1,7 +1,8 @@
-import { pipe } from "../../functions"
+import type { Either } from "../types"
+
+import pipe from "../../functions/pipe"
 import map from "../map"
 import flatMap from "../flatMap"
-import { Either } from "../types"
 
 type ApF = <E, A, B>(
 	eitherF: Either<E, (a: A) => B>,

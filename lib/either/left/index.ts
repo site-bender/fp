@@ -1,4 +1,4 @@
-import { Either } from "../types"
+import type { Either } from "../types"
 
 const left = <E, A = never>(e: E): Either<E, A> => ({
 	_tag: "Left",

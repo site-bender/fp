@@ -1,5 +1,8 @@
-import { tail } from "../../array"
-import { Option, isNone, some } from ".."
+import type { Option } from "../types"
+
+import isNone from "../isNone"
+import some from "../some"
+import tail from "../../array/tail"
 
 type Traverse = <T, R>(
 	f: (t: T) => Option<R>,

@@ -1,7 +1,11 @@
-import { Either, isLeft, left, right } from ".."
+import type { Either } from "../types"
+
+import isLeft from "../isLeft"
+import left from "../left"
 import map from "../map"
+import pipe from "../../functions/pipe"
+import right from "../right"
 import tail from "../../array/tail"
-import { pipe } from "../../functions"
 
 type TraverseAccumulate = <E>(
 	concat: (e: E, e2: E) => E,
