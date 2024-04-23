@@ -1,3 +1,5 @@
+/* v8 ignore */
+
 import type { Option, Some, None } from "./types"
 
 import flatMap from "./flatMap"

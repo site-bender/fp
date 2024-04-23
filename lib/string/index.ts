@@ -1,3 +1,5 @@
+/* v8 ignore */
+
 import concat from "./concat"
 import endsWith from "./endsWith"
 import match from "./match"

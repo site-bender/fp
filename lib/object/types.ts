@@ -4,7 +4,7 @@ export type JSONValue =
 	| boolean
 	| null
 	| JSONArray
-	| { [key: string]: JSONValue }
+	| JSONObject
 
 export interface JSONObject {
 	[k: string]: JSONValue

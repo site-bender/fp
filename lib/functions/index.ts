@@ -1,3 +1,5 @@
+/* v8 ignore */
+
 import identity from "./identity"
 import pipe from "./pipe"
 import uncurry from "./uncurry"

@@ -1,3 +1,5 @@
+/* v8 ignore */
+
 import type { JSONArray, JSONObject, JSONValue } from "./types"
 
 import path from "./path"
