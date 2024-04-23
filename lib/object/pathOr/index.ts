@@ -22,7 +22,7 @@ const pathOr: PathOrF = path => or => source => {
 
 	// Should map return None when value is undefined?
 	const out = map(
-		value => (value as JSONObject)[(segment as Some<string>).value],
+		value => (value as JSONObject)[(segment as Some<string | number>).value],
 	)(source)
 
 	if (isNone(out) || out.value == null) {
