@@ -7,7 +7,7 @@ const nums = [null, null, 1, 3, 5, undefined, 9]
 const strings = ["bob", "is", undefined, "and", "never", null]
 const ok = [1, "yes", true]
 
-test("compacts the array by removing null and undefined", () => {
+test("[compact] (array) compacts the array by removing null and undefined", () => {
 	const empty: Array<void> = []
 
 	expect(compact(bools)).toStrictEqual([false, true, false, true, true])

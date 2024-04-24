@@ -4,10 +4,10 @@ import toUpper from "."
 
 const str = "Who IS tHe MAn?"
 
-test("returns the locale lowercase version of the passed string", () => {
+test("[toUpper] (string) returns the locale lowercase version of the passed string", () => {
 	expect(toUpper(str)).toStrictEqual("WHO IS THE MAN?")
 })
 
-test("works with empty strings", () => {
+test("[toUpper] (string) works with empty strings", () => {
 	expect(toUpper("")).toStrictEqual("")
 })

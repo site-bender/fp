@@ -2,7 +2,7 @@ import { expect, test } from "vitest"
 
 import repeat from "."
 
-test("repeats the item count times", () => {
+test("[repeat] (array) repeats the item count times", () => {
 	const getThree = repeat(3)
 
 	expect(getThree("bob")).toStrictEqual(["bob", "bob", "bob"])
@@ -12,7 +12,7 @@ test("repeats the item count times", () => {
 	expect(repeat(2)(null)).toStrictEqual([null, null])
 })
 
-test("returns an empty array when count < 1", () => {
+test("[repeat] (array) returns an empty array when count < 1", () => {
 	expect(repeat(0)("bob")).toStrictEqual([])
 	expect(repeat(-1)("bob")).toStrictEqual([])
 	// @ts-expect-error

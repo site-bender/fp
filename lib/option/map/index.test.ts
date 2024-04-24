@@ -1,34 +1,42 @@
-import { describe, test, expect } from "vitest"
+import { test, expect } from "vitest"
+
 import * as fc from "fast-check"
-import map from "."
-import { identity, pipe } from "../../functions"
+
+import identity from "../../functions/identity"
+import none from "../none"
+import pipe from "../../functions/pipe"
 import some from "../some"
 
-describe("Option map", () => {
-	test("identity", () => {
-		fc.assert(
-			fc.property(fc.anything(), value => {
-				const option = some(value)
-				expect(map(identity)(option)).toEqual(option)
-			}),
-		)
-	})
+import map from "."
 
-	test("composition", () => {
-		fc.assert(
-			fc.property(fc.integer(), value => {
-				const inc = (n: number) => n + 1
-				const option = some(value)
+test("[map] (option) supports identity", () => {
+	fc.assert(
+		fc.property(fc.anything(), value => {
+			const option = some(value)
 
-				const piped = pipe(option, map(inc), map(inc))
+			expect(map(identity)(option)).toEqual(option)
+		}),
+	)
+})
 
-				const composed = pipe(
-					option,
-					map(n => inc(inc(n))),
-				)
+test("[map] (option) supports composition", () => {
+	fc.assert(
+		fc.property(fc.integer(), value => {
+			const inc = (n: number) => n + 1
+			const option = some(value)
 
-				expect(piped).toEqual(composed)
-			}),
-		)
-	})
+			const piped = pipe(option, map(inc), map(inc))
+
+			const composed = pipe(
+				option,
+				map(n => inc(inc(n))),
+			)
+
+			expect(piped).toEqual(composed)
+		}),
+	)
+})
+
+test("[map] (option) returns a none unchanged", () => {
+	expect(pipe(none, map(identity))).toEqual(none)
 })

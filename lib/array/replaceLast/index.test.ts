@@ -5,7 +5,7 @@ import replaceLast from "."
 
 const arr = ["bob", "is", "the", "bob", "of", "bobs"]
 
-test("replaces all occurrences of the matched item with the f(original)", () => {
+test("[replaceLast] (array) replaces all occurrences of the matched item with the f(original)", () => {
 	expect(replaceLast("bob")(toUpper)(arr)).toStrictEqual([
 		"bob",
 		"is",
@@ -27,6 +27,6 @@ test("replaces all occurrences of the matched item with the f(original)", () => 
 	)
 })
 
-test("returns the array unchanged if match not found", () => {
+test("[replaceLast] (array) returns the array unchanged if match not found", () => {
 	expect(replaceLast("sally")(toUpper)(arr)).toStrictEqual(arr)
 })

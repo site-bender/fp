@@ -4,10 +4,10 @@ import trim from "."
 
 const str = "       BOB!        "
 
-test("returns the trimmed version of the passed string", () => {
+test("[trim] (string) returns the trimmed version of the passed string", () => {
 	expect(trim(str)).toStrictEqual("BOB!")
 })
 
-test("works with empty strings", () => {
+test("[trim] (string) works with empty strings", () => {
 	expect(trim("")).toStrictEqual("")
 })

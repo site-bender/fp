@@ -8,21 +8,21 @@ type Traverse = <T, R>(
 	f: (t: T) => Option<R>,
 ) => (self: Array<T>) => Option<Array<R>>
 
-const traverse: Traverse = f => as => {
-	if (as.length < 1) return some([])
+const traverse: Traverse = f => xs => {
+	if (xs.length < 1) return some([])
 
-	const o = f(as[0])
+	const initialResult = f(xs[0])
 
-	if (isNone(o)) return o
+	if (isNone(initialResult)) return initialResult
 
-	const out = [o.value]
+	const out = [initialResult.value]
 
-	for (let a of tail(as)) {
-		const o = f(a)
+	for (let x of tail(xs)) {
+		const intermediateResult = f(x)
 
-		if (isNone(o)) return o
+		if (isNone(intermediateResult)) return intermediateResult
 
-		out.push(o.value)
+		out.push(intermediateResult.value)
 	}
 
 	return some(out)

@@ -1,6 +1,6 @@
 {
 	"name": "@sitebender/fp",
-	"version": "0.0.15",
+	"version": "0.0.16",
 	"description": "Typescript utilities and types with an FP tilt.",
 	"license": "MIT",
 	"author": "Charles F. Munat <coder@craft-code.dev>",
@@ -32,7 +32,7 @@
 		"prettier": "^3.2.5",
 		"typescript": "^5.4.5",
 		"vite": "^5.2.10",
-		"vite-plugin-dts": "^3.8.3",
+		"vite-plugin-dts": "^3.9.0",
 		"vitest": "^1.5.0"
 	}
 }

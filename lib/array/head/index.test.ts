@@ -5,10 +5,10 @@ import head from "."
 
 const arr = [1, 2, 3, 4, 5]
 
-test("gets Some(head) when array length > 0", () => {
+test("[head] (array) returns Some(head) when array length > 0", () => {
 	expect(head(arr)).toStrictEqual(some(1))
 })
 
-test("gets None when the array is empty", () => {
+test("[head] (array) returns None when the array is empty", () => {
 	expect(head([])).toStrictEqual(none)
 })
