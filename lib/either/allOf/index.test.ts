@@ -1,30 +1,32 @@
-import { describe, test, expect } from "vitest"
+import { test, expect } from "vitest"
+
 import * as fc from "fast-check"
-import right from "../right"
-import { pipe } from "../../functions"
-import allOf from "."
+
 import left from "../left"
+import pipe from "../../functions/pipe"
+import right from "../right"
 
-describe("Either allOf", () => {
-	test("successes", () => {
-		fc.assert(
-			fc.property(fc.array(fc.anything()), as => {
-				const result = pipe(as, pipe(right, allOf))
+import allOf from "."
 
-				expect(result).toEqual(right(as))
-			}),
-		)
-	})
-	test("failures", () => {
-		fc.assert(
-			fc.property(fc.array(fc.anything(), { minLength: 1 }), as => {
-				const result = pipe(
-					as,
-					pipe((a: any) => left([a]), allOf),
-				)
+test("[allOf] (either) returns right(xs) on all succeeding", () => {
+	fc.assert(
+		fc.property(fc.array(fc.anything()), xs => {
+			const result = pipe(xs, pipe(right, allOf))
 
-				expect(result).toEqual(left(as))
-			}),
-		)
-	})
+			expect(result).toEqual(right(xs))
+		}),
+	)
+})
+
+test("[allOf] (either) returns left(xs) on one or more failures", () => {
+	fc.assert(
+		fc.property(fc.array(fc.anything(), { minLength: 1 }), xs => {
+			const result = pipe(
+				xs,
+				pipe((a: any) => left([a]), allOf),
+			)
+
+			expect(result).toEqual(left(xs))
+		}),
+	)
 })

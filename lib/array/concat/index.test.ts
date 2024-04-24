@@ -6,7 +6,7 @@ const arr1 = [0, 1, 2, 3, 4]
 const arr2 = [5, 6, 7, 8, 9]
 const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-test("concatenates two arrays together and returns a new array", () => {
+test("[concat] (array) concatenates two arrays together and returns a new array", () => {
 	const added = concat(arr1)(arr2)
 
 	expect(added).toStrictEqual(arr)
@@ -15,7 +15,7 @@ test("concatenates two arrays together and returns a new array", () => {
 	expect(added === arr2).toBeFalsy()
 })
 
-test("returns the array when the other is empty or undefined", () => {
+test("[concat] (array) returns the array when the other is empty or undefined", () => {
 	const empty = [] as Array<number>
 
 	// @ts-expect-error

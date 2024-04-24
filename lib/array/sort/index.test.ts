@@ -5,11 +5,11 @@ import sort from "."
 const arr = [1, 5, 3, 2, 4]
 const obj = [{ age: 12 }, { age: 7 }, { age: 42 }, { age: 2 }]
 
-test("returns the array sorted ascending when no function passed", () => {
+test("[sort] (array) returns the array sorted ascending when no function passed", () => {
 	expect(sort()(arr)).toStrictEqual([1, 2, 3, 4, 5])
 })
 
-test("returns the array sorted using the comparator when passed", () => {
+test("[sort] (array) returns the array sorted using the comparator when passed", () => {
 	expect(sort<{ age: number }>((a, b) => b.age - a.age)(obj)).toStrictEqual([
 		{
 			age: 42,

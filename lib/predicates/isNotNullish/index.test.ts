@@ -2,7 +2,7 @@ import { expect, test } from "vitest"
 
 import isNotNullish from "."
 
-test("returns true if the argument is neither null nor undefined", () => {
+test("[isNotNullish] (predicates) returns true if the argument is neither null nor undefined", () => {
 	const isBoolean = false
 	const isNumber = 0
 	const isString = ""
@@ -18,7 +18,7 @@ test("returns true if the argument is neither null nor undefined", () => {
 	expect(isNotNullish(isFunction)).toBeTruthy()
 })
 
-test("returns false if the argument is null or undefined", () => {
+test("[isNotNullish] (predicates) returns false if the argument is null or undefined", () => {
 	const isNull = null
 	const isUndefined = undefined
 

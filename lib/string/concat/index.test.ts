@@ -6,13 +6,13 @@ const str1 = "hot"
 const str2 = "dogs"
 const str = "hotdogs"
 
-test("concatenates two strings together and returns that string", () => {
+test("[concat] (string) concatenates two strings together and returns that string", () => {
 	const added = concat(str1)(str2)
 
 	expect(added).toStrictEqual(str)
 })
 
-test("returns the string when the other is empty or undefined", () => {
+test("[concat] (string) returns the string when the other is empty or undefined", () => {
 	const empty = ""
 
 	expect(concat()(str2)).toStrictEqual(str2)

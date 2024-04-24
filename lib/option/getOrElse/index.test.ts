@@ -1,34 +1,35 @@
-import { describe, expect, test } from "vitest"
+import { expect, test } from "vitest"
+
 import * as fc from "fast-check"
-import { pipe } from "../../functions"
-import getOrElse from "."
-import some from "../some"
+
 import none from "../none"
+import pipe from "../../functions/pipe"
+import some from "../some"
 
-describe("Option getOrElse", () => {
-	test("returns the some value", () => {
-		fc.assert(
-			fc.property(fc.anything(), fc.anything(), (value, alt) => {
-				const result = pipe(
-					some(value),
-					getOrElse(() => alt),
-				)
+import getOrElse from "."
 
-				expect(result).toEqual(value)
-			}),
-		)
-	})
+test("[getOrElse] (option) returns the some value", () => {
+	fc.assert(
+		fc.property(fc.anything(), fc.anything(), (value, alt) => {
+			const result = pipe(
+				some(value),
+				getOrElse(() => alt),
+			)
 
-	test("returns the alt value for a left", () => {
-		fc.assert(
-			fc.property(fc.anything(), alt => {
-				const result = pipe(
-					none,
-					getOrElse(() => alt),
-				)
+			expect(result).toEqual(value)
+		}),
+	)
+})
 
-				expect(result).toEqual(alt)
-			}),
-		)
-	})
+test("[getOrElse] (option) returns the alt value for a left", () => {
+	fc.assert(
+		fc.property(fc.anything(), alt => {
+			const result = pipe(
+				none,
+				getOrElse(() => alt),
+			)
+
+			expect(result).toEqual(alt)
+		}),
+	)
 })

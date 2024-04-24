@@ -4,7 +4,6 @@ import type { Option } from "../../option/types"
 import flatMap from "../../option/flatMap"
 import head from "../../array/head"
 import isNone from "../../option/isNone"
-import none from "../../option/none"
 import pipe from "../../functions/pipe"
 import some from "../../option/some"
 
@@ -12,7 +11,7 @@ type PathOrF = (
 	path: string | Array<string | number>,
 ) => (
 	or: Option<JSONValue>,
-) => (source: Option<JSONObject | JSONValue>) => Option<JSONValue>
+) => (source: Option<JSONObject>) => Option<JSONValue>
 
 const pathOr: PathOrF = path => or => source => {
 	if (isNone(source)) {
@@ -27,11 +26,9 @@ const pathOr: PathOrF = path => or => source => {
 			pipe(
 				source,
 				flatMap(value =>
-					typeof value === "object" && value != null
-						? Array.isArray(value)
-							? some(value[segment as number])
-							: some(value[segment as string])
-						: none,
+					Array.isArray(value)
+						? some(value[segment as number])
+						: some(value[segment as number]),
 				),
 			),
 		),

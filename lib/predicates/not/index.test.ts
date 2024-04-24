@@ -2,7 +2,7 @@ import { expect, test } from "vitest"
 
 import not from "."
 
-test("converts falsy values to boolean true", () => {
+test("[not] (predicates) converts falsy values to boolean true", () => {
 	expect(not(true)).toBe(false)
 	expect(not(1)).toBe(false)
 	expect(not(-1)).toBe(false)
@@ -13,7 +13,7 @@ test("converts falsy values to boolean true", () => {
 	expect(not({})).toBe(false)
 })
 
-test("converts truthy values to boolean false", () => {
+test("[not] (predicates) converts truthy values to boolean false", () => {
 	expect(not(false)).toBe(true)
 	expect(not(0)).toBe(true)
 	expect(not(-0)).toBe(true)

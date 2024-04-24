@@ -4,7 +4,7 @@ import splitEvery from "."
 
 const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-test("splits the array into groups of n items, plus one group of any remaining", () => {
+test("[splitEvery] (array) splits the array into groups of n items, plus one group of any remaining", () => {
 	expect(splitEvery(1)(arr)).toStrictEqual([
 		[0],
 		[1],
@@ -41,10 +41,10 @@ test("splits the array into groups of n items, plus one group of any remaining",
 	])
 })
 
-test("wraps the array if n > array.length", () => {
+test("[splitEvery] (array) wraps the array if n > array.length", () => {
 	expect(splitEvery(10)(arr)).toStrictEqual([arr])
 })
 
-test("returns an empty array for a count < 1", () => {
+test("[splitEvery] (array) returns an empty array for a count < 1", () => {
 	expect(splitEvery(0)(arr)).toStrictEqual([])
 })

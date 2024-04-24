@@ -4,7 +4,7 @@ import includes from "."
 
 const arr = [1, 2, 3, 4, 5]
 
-test("returns true when the item is in the array", () => {
+test("[includes] (array) returns `true` when the item is in the array", () => {
 	expect(includes(1)(arr)).toBeTruthy()
 	expect(includes(2)(arr)).toBeTruthy()
 	expect(includes(3)(arr)).toBeTruthy()
@@ -12,7 +12,7 @@ test("returns true when the item is in the array", () => {
 	expect(includes(5)(arr)).toBeTruthy()
 })
 
-test("returns false when the item is not in the array", () => {
+test("[includes] (array) returns `false` when the item is not in the array", () => {
 	expect(includes(0)(arr)).toBeFalsy()
 	expect(includes(6)(arr)).toBeFalsy()
 	expect(includes("bob")([])).toBeFalsy()

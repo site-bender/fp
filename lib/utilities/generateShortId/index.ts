@@ -16,18 +16,6 @@ function convertUUIDToBase58(uuid: string): string {
 	return convertBigIntToBase58(bigInt)
 }
 
-function generateShortIdRecursive(
-	uuid = crypto.randomUUID(),
-	minChars = 12,
-): string {
-	const out = convertUUIDToBase58(uuid)
-
-	return `${out.length > minChars ? out : generateShortIdRecursive()}`
-}
-
-export default function generateShortId(
-	uuid = crypto.randomUUID(),
-	minChars = 12,
-): string {
-	return `_${generateShortIdRecursive(uuid, minChars)}`
+export default function generateShortId(uuid = crypto.randomUUID()): string {
+	return `_${convertUUIDToBase58(uuid)}`
 }

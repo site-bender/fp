@@ -5,7 +5,7 @@ import replaceFirstMatch from "."
 
 const arr = ["bob", "is", "the", "bob", "of", "bobs"]
 
-test("replaces all occurrences of the matched item with the f(original)", () => {
+test("[replaceFirstMatch] (array) replaces all occurrences of the matched item with the f(original)", () => {
 	expect(replaceFirstMatch(/bob/)(toUpper)(arr)).toStrictEqual([
 		"BOB",
 		"is",
@@ -27,6 +27,6 @@ test("replaces all occurrences of the matched item with the f(original)", () => 
 	).toStrictEqual(["sally", "is", "the", "bob", "of", "bobs"])
 })
 
-test("returns the array unchanged if match not found", () => {
+test("[replaceFirstMatch] (array) returns the array unchanged if match not found", () => {
 	expect(replaceFirstMatch(/sally/)(toUpper)(arr)).toStrictEqual(arr)
 })

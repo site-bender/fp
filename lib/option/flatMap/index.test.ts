@@ -1,45 +1,51 @@
-import { describe, test, expect } from "vitest"
+import { test, expect } from "vitest"
+
 import * as fc from "fast-check"
-import { pipe } from "../../functions"
-import flatMap from "."
+
+import pipe from "../../functions/pipe"
+import none from "../none"
 import some from "../some"
 
-describe("Option flatMap", () => {
-	const f = (x: number) => some(x + 1)
+import flatMap from "."
 
-	test("left identity", () => {
-		fc.assert(
-			fc.property(fc.integer(), value => {
-				const pure = some(value)
+const f = (x: number) => some(x + 1)
 
-				expect(pipe(pure, flatMap(f))).toEqual(f(value))
-			}),
-		)
-	})
+test("[flatMap] (option) supports left identity", () => {
+	fc.assert(
+		fc.property(fc.integer(), value => {
+			const pure = some(value)
 
-	test("right identity", () => {
-		fc.assert(
-			fc.property(fc.anything(), value => {
-				const pure = some(value)
+			expect(pipe(pure, flatMap(f))).toEqual(f(value))
+		}),
+	)
+})
 
-				expect(pipe(pure, flatMap(some))).toEqual(pure)
-			}),
-		)
-	})
+test("[flatMap] (option) supports right identity", () => {
+	fc.assert(
+		fc.property(fc.anything(), value => {
+			const pure = some(value)
 
-	test("associativity", () => {
-		fc.assert(
-			fc.property(fc.integer(), a => {
-				const pure = some(a)
+			expect(pipe(pure, flatMap(some))).toEqual(pure)
+		}),
+	)
+})
 
-				const lhs = pipe(pipe(pure, flatMap(f)), flatMap(f))
-				const rhs = pipe(
-					pure,
-					flatMap(_ => pipe(f(_), flatMap(f))),
-				)
+test("[flatMap] (option) supports associativity", () => {
+	fc.assert(
+		fc.property(fc.integer(), a => {
+			const pure = some(a)
 
-				expect(lhs).toEqual(rhs)
-			}),
-		)
-	})
+			const lhs = pipe(pipe(pure, flatMap(f)), flatMap(f))
+			const rhs = pipe(
+				pure,
+				flatMap(_ => pipe(f(_), flatMap(f))),
+			)
+
+			expect(lhs).toEqual(rhs)
+		}),
+	)
+})
+
+test("[flatMap] (option) returns a none unchanged", () => {
+	expect(pipe(none, flatMap<number, number>(f))).toEqual(none)
 })
