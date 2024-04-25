@@ -1,11 +1,14 @@
-import { Either } from "../types"
+import { Either, InferEitherTuple } from "../types"
 
 import identity from "../../functions/identity"
 import pipe from "../../functions/pipe"
 import traverse from "../traverse"
 
-type Sequence = <E, A>(self: Array<Either<E, A>>) => Either<E, Array<A>>
-
-const sequence: Sequence = self => pipe(self, traverse(identity))
+function sequence<E, T extends Array<Either<E, any>>>(
+	self: [...T],
+): Either<E, InferEitherTuple<T>>
+function sequence<E, U>(self: Array<Either<E, U>>) {
+	return pipe(self, traverse(identity))
+}
 
 export default sequence
