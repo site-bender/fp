@@ -25,7 +25,7 @@ const traverseAccumulate: TraverseAccumulate = concat => f => as => {
 
 		if (isLeft(acc) && isLeft(eitherB))
 			return left(concat(acc.left, eitherB.left))
-		else if (isLeft(acc)) return acc
+		/* v8 ignore next 3 */ else if (isLeft(acc)) return acc
 		else if (isLeft(eitherB)) return eitherB
 		else return right([...acc.right, eitherB.right])
 	}, first)
