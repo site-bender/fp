@@ -67,3 +67,15 @@ test("[traverseAccumulate] (either) returns left for [_, left]", () => {
 
 	expect(result).toEqual(left(false))
 })
+
+test("[traverseAccumulate] (either) exits early for an initial left value", () => {
+	const result = pipe(
+		[1, 2, 3],
+		pipe(
+			(n: number) => (n == 1 ? left(false) : right(n)),
+			traverseAccumulate((a, b) => a && b),
+		),
+	)
+
+	expect(result).toEqual(left(false))
+})
