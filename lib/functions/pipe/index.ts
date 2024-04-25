@@ -46,7 +46,7 @@ function pipe(
 		default:
 			const [head, ...rest] = arguments
 			return rest.reduce((result, fn) => fn(result), head)
-	}
-}
+	} /* v8 ignore next 3*/
+} /* v8 ignore next 3*/
 
 export default pipe
