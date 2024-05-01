@@ -1,8 +1,13 @@
-import { JSONObject } from "../types"
-
-export type OmitF = (keys: Array<string>) => (obj: JSONObject) => JSONObject
+export type OmitF = <
+	Object extends Record<PropertyKey, any>,
+	Keys extends Array<keyof Object>,
+>(
+	keys: Keys,
+) => (obj: Object) => Omit<Object, Keys[number]>
 
 const omit: OmitF = keys => obj =>
-	Object.fromEntries(Object.entries(obj).filter(([key]) => !keys.includes(key)))
+	Object.fromEntries(
+		Object.entries(obj).filter(([key]) => !keys.includes(key)),
+	) as any
 
 export default omit
